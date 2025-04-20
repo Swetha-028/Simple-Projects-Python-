@@ -1,0 +1,36 @@
+shopping_cart=[]
+while True:
+    print("shopping list")
+    print("1.add item")
+    print("2.remove item")
+    print("3.view item")
+    print("4.clear item")
+    print("5.exit")
+    choice=input("enter you choice for shopping")
+    if choice=="1":
+        item=input("enter the item")
+        shopping_cart.append(item)
+        print(f"{item} is been added");
+    elif choice=="2":
+        item=input("enter the item to be removed")
+        if item in shopping_cart:
+            shopping_cart.remove(item)
+            print(f"{item} has been successfully removed")
+        else:
+            print(f"{item} doesn't exist in the cart")
+    elif choice=="3":
+        if not shopping_cart:
+            print("empty")
+        else:
+            for item in shopping_cart:
+                print(item)
+    elif choice=="4":
+        shopping_cart.clear()
+        print("the items in the cart are empty now")
+    elif choice=="5":
+        print("End of shopping")
+        print("restsrt your shopping")
+        break;
+    else:
+        print("invalid choice")
+        
